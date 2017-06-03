@@ -1,8 +1,4 @@
-const dbConfig = require('../database');
-const caminte = require('caminte');
-const Schema = caminte.Schema;
-const schema = new Schema('mysql', dbConfig);
-const Timesheet = require('../models/TimesheetModel')(schema);
+const Timesheet = require('../../models/TimesheetModel');
 const moment = require('moment');
 
 module.exports = data => {
