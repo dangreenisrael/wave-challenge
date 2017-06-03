@@ -9,11 +9,11 @@ module.exports = (req, res) => {
   if (!req.files) return res.status(400).json({error: 'No files were uploaded.'});
   let csv = req.files.timesheet.data.toString().trim();
   const {data} = babyParse.parse(csv);
-  data.shift(); // Strip headings
-  const id = data.pop()[1];
-  duplicateCheck(id)
+  data.shift(); // Strip headings (The structure of the CSV is guaranteed)
+  const reportId = data.pop()[1];
+  duplicateCheck(reportId)
     .then(() => {
-      addReportToHistory({id, body: csv})
+      addReportToHistory({id: reportId, body: csv})
         .then(() => createTimeRecords(data))
         .then(data => res.send(data))
         .catch(err => res.status(500).json(err));

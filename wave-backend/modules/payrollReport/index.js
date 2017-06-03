@@ -1,10 +1,8 @@
 const getPayAmount = require('./getPayAmount');
 const formatPayPeriod = require('./formatPayPeriod');
-const groupByIdAndPayPeriod = require('./groupByIdAndPayPeriod');
-const getTotalsPerPersonPerTimePeriod = require('./getTotalsPerPersonPerTimePeriod');
+const getTotalPayForTimePeriodByEmployee = require('./getTotalPayForTimePeriodByEmployee');
 module.exports = {
   getPayAmount,
   formatPayPeriod,
-  groupByIdAndPayPeriod,
-  getTotalsPerPersonPerTimePeriod
+  getTotalPayForTimePeriodByEmployee
 };

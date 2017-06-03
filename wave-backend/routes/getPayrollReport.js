@@ -2,21 +2,20 @@ const Timesheet = require('../models/TimesheetModel');
 const {
   getPayAmount,
   formatPayPeriod,
-  groupByIdAndPayPeriod,
-  getTotalsPerPersonPerTimePeriod
+  getTotalPayForTimePeriodByEmployee
 } = require('../modules/payrollReport');
 
 module.exports = (req, res) => {
   new Timesheet();
+  // We are getting all records because the spec calls for all time records ever
   Timesheet.all((err, docs) => {
     if (err) return res.status(500).json({error: 'DB Error'});
     const payrollRecords = docs.map(record => ({
       employeeId: record.employeeId,
       payPeriod: formatPayPeriod(record.date),
-      totalPaid: getPayAmount(record)
+      totalPay: getPayAmount(record)
     }));
-    const groupedByIdAndPayPeriod = groupByIdAndPayPeriod(payrollRecords);
-    const totalsPerPersonPerTimePeriod = getTotalsPerPersonPerTimePeriod(groupedByIdAndPayPeriod);
-    res.json(totalsPerPersonPerTimePeriod);
+    const totalPayForTimePeriodByEmployee = getTotalPayForTimePeriodByEmployee(payrollRecords);
+    res.json(totalPayForTimePeriodByEmployee);
   });
 };
