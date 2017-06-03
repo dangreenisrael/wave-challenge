@@ -1,4 +1,12 @@
-module.exports = payrollRecords => {
+const getPayAmount = require('./getPayAmount');
+const formatPayPeriod = require('./formatPayPeriod');
+module.exports = timeRecords => {
+  const payrollRecords = timeRecords.map(record => ({
+    employeeId: record.employeeId,
+    payPeriod: formatPayPeriod(record.date),
+    totalPay: getPayAmount(record)
+  }));
+
   const groupedByIdAndPayPeriodObj = payrollRecords.reduce(
     (acc, rec) => {
       const key = `${rec.employeeId} - ${rec.payPeriod}`; // Unique key for id/pay period

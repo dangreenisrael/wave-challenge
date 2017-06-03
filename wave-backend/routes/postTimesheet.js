@@ -1,16 +1,14 @@
 const {
   createTimeRecords,
   duplicateCheck,
-  addReportToHistory
+  addReportToHistory,
+  parseReportFromCSV
 } = require('../modules/timesheets');
 
-const babyParse = require('babyparse');
 module.exports = (req, res) => {
   if (!req.files) return res.status(400).json({error: 'No files were uploaded.'});
   let csv = req.files.timesheet.data.toString().trim();
-  const {data} = babyParse.parse(csv);
-  data.shift(); // Strip headings (The structure of the CSV is guaranteed)
-  const reportId = data.pop()[1];
+  const {data, reportId} = parseReportFromCSV(csv);
   duplicateCheck(reportId)
     .then(() => {
       addReportToHistory({id: reportId, body: csv})
