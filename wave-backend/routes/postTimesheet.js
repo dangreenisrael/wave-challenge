@@ -6,7 +6,7 @@ const {
 } = require('../modules/timesheets');
 
 module.exports = (req, res) => {
-  const {timesheet} = req.files;
+  const timesheet = req.files ? req.files.timesheet : null;
   if (!timesheet) return res.status(400).json({error: 'No files were uploaded.'});
   if (timesheet.mimetype !== 'text/csv') return res.status(400).json({error: 'Not a CSV'});
   let csv = timesheet.data.toString().trim();
