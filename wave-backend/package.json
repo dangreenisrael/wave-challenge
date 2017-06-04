@@ -6,7 +6,8 @@
     "scripts": {
         "test": "jest --watch",
         "coverage": "jest --coverage",
-        "start": "node app.js"
+        "start": "node app.js",
+        "generateDB": "node generateDB.js"
     },
     "dependencies": {
         "babyparse": "^0.4.6",
@@ -17,7 +18,8 @@
         "jest": "^20.0.4",
         "moment": "^2.18.1",
         "morgan": "^1.8.2",
-        "mysql": ">= 2.0.0"
+        "mysql": ">= 2.0.0",
+        "sqlite3": "^3.1.8"
     },
     "caminte": {
         "adapter": "`mysql"
