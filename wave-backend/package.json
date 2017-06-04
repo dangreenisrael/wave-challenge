@@ -5,6 +5,7 @@
     "license": "MIT",
     "scripts": {
         "test": "jest --watch",
+        "coverage": "jest --coverage",
         "start": "node app.js"
     },
     "dependencies": {

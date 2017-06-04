@@ -6,8 +6,10 @@ const {
 } = require('../modules/timesheets');
 
 module.exports = (req, res) => {
-  if (!req.files) return res.status(400).json({error: 'No files were uploaded.'});
-  let csv = req.files.timesheet.data.toString().trim();
+  const {timesheet} = req.files;
+  if (!timesheet) return res.status(400).json({error: 'No files were uploaded.'});
+  if (timesheet.mimetype !== 'text/csv') return res.status(400).json({error: 'Not a CSV'});
+  let csv = timesheet.data.toString().trim();
   const {data, reportId} = parseReportFromCSV(csv);
   duplicateCheck(reportId)
     .then(() => {

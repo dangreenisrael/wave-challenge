@@ -7,10 +7,14 @@ afterAll(() => {
 });
 
 describe('Add report to history', () => {
-  it('Should resolve when adding a new record', () => {
-    expect(duplicateCheck({id: 15, body: 'Lorem ipsum'})).resolves.toBeDefined();
+  it('Should resolve checking a new record', () => {
+    expect(duplicateCheck(15)).resolves.toBeDefined();
   });
-  it('Should reject when adding a duplicate record', () => {
-    expect(duplicateCheck({id: 15, body: 'Lorem ipsum'})).rejects.toBe(409);
+  it('Should reject when checking a duplicate record', done => {
+    new ReportHistory();
+    ReportHistory.create({id: 15, body: 'Lorem ipsum'}, () => {
+      expect(duplicateCheck(15)).rejects.toBe(409);
+      done();
+    });
   });
 });
