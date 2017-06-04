@@ -1,3 +1,4 @@
+# Wave Demo App
 # Wave Software Development Challenge
 
 Applicants for the [Software
@@ -222,3 +223,41 @@ Evaluation of your submission will be based on the following criteria.
    they explained?
 1. Did you separate any concerns in your application? Why or why not?
 1. Does your solution use appropriate data types for the problem as described?
+
+---------------------------
+
+## Design decisions
+
+### Server vs. Client models
+I opted to keep the data handling logic server side.  In a more complex app I would use redux along with react, but to keep things simple I opted to only maintain models on the server.
+
+
+## Server Instructions
+
+### Initial setup 
+
+1. `cd ./wave-backend`
+
+2. `yarn; yarn generateDB; yarn start;`
+
+
+### Running
+
+`yarn start`
+
+### Testing
+
+`yarn test`
+
+## Client Instructions
+
+### Initial setup
+1. `cd ./wave-backend`
+
+2. `yarn; yarn start;`
+
+### Running
+`yarn start`
+
+### Testing
+`yarn test`
