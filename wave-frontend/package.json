@@ -8,7 +8,10 @@
   "dependencies": {
     "add": "^2.0.6",
     "axios": "^0.16.1",
+    "axios-mock-adapter": "^1.8.1",
     "bootstrap": "^3.3.7",
+    "enzyme": "^2.8.2",
+    "enzyme-to-json": "^1.5.1",
     "prop-types": "^15.5.7",
     "react": "^15.5.4",
     "react-addons-css-transition-group": "^15.0.1",
@@ -16,6 +19,7 @@
     "react-bootstrap-table": "^4.0.0-beta.5",
     "react-dom": "^15.5.4",
     "react-modal": "^1.7.7",
+    "react-test-renderer": "^15.5.4",
     "yarn": "^0.24.5"
   },
   "scripts": {
@@ -23,5 +27,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.js",
+      "!src/modules/fetcher/**/*.js",
+      "!<rootDir>/node_modules/"
+    ]
   }
 }

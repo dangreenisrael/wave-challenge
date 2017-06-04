@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CSVUploader Renders Correctly 1`] = `
+<label
+  className="btn btn-primary btn-lg"
+  style={
+    Object {
+      "margin": 10,
+    }
+  }
+>
+  Choose a CSV
+  <input
+    accept=".csv"
+    onChange={[Function]}
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+    type="file"
+  />
+</label>
+`;

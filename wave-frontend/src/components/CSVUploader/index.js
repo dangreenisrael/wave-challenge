@@ -21,11 +21,15 @@ class CSVUpload extends Component {
       })
       .catch(error => {
         const {status} = error.response;
+        this.setState({inputType: ''}); //Reset file input
         if (status === 409) {
-          this.setState({inputType: ''}); //Reset file input
           alert('You submitted a report that we have already processed');
-          this.setState({inputType: 'file'}); //Reset file input
+        } else if (status === 400) {
+          alert("You submitted a file that isn't a CSV");
+        } else {
+          alert('Whoops, There seems to be a problem with our server');
         }
+        this.setState({inputType: 'file'}); //Reset file input
       });
   }
   render() {

@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PayrollReport Renders Correctly 1`] = `
+<BootstrapTable
+  bodyContainerClass={null}
+  bordered={true}
+  cellEdit={
+    Object {
+      "afterSaveCell": undefined,
+      "beforeSaveCell": undefined,
+      "blurToSave": false,
+      "mode": "none",
+      "nonEditableRows": undefined,
+    }
+  }
+  columnFilter={false}
+  condensed={false}
+  containerClass={null}
+  csvFileName="spreadsheet.csv"
+  data={
+    Array [
+      Object {
+        "employeeId": 1,
+        "payPeriod": "01/11/2016 - 15/11/2016",
+        "totalPay": 150,
+      },
+      Object {
+        "employeeId": 2,
+        "payPeriod": "01/11/2016 - 15/11/2016",
+        "totalPay": 930,
+      },
+      Object {
+        "employeeId": 3,
+        "payPeriod": "01/11/2016 - 15/11/2016",
+        "totalPay": 590,
+      },
+      Object {
+        "employeeId": 4,
+        "payPeriod": "01/11/2016 - 15/11/2016",
+        "totalPay": 150,
+      },
+      Object {
+        "employeeId": 1,
+        "payPeriod": "16/11/2016 - 30/11/2016",
+        "totalPay": 220,
+      },
+      Object {
+        "employeeId": 4,
+        "payPeriod": "16/11/2016 - 30/11/2016",
+        "totalPay": 450,
+      },
+      Object {
+        "employeeId": 1,
+        "payPeriod": "01/12/2016 - 15/12/2016",
+        "totalPay": 150,
+      },
+      Object {
+        "employeeId": 2,
+        "payPeriod": "01/12/2016 - 15/12/2016",
+        "totalPay": 930,
+      },
+      Object {
+        "employeeId": 3,
+        "payPeriod": "01/12/2016 - 15/12/2016",
+        "totalPay": 470,
+      },
+      Object {
+        "employeeId": 4,
+        "payPeriod": "01/12/2016 - 15/12/2016",
+        "totalPay": 150,
+      },
+      Object {
+        "employeeId": 1,
+        "payPeriod": "16/12/2016 - 31/12/2016",
+        "totalPay": 220,
+      },
+      Object {
+        "employeeId": 4,
+        "payPeriod": "16/12/2016 - 31/12/2016",
+        "totalPay": 450,
+      },
+      Object {
+        "employeeId": 4,
+        "payPeriod": "16/02/2015 - 28/02/2015",
+        "totalPay": 100,
+      },
+      Object {
+        "employeeId": 4,
+        "payPeriod": "16/02/2016 - 29/02/2016",
+        "totalPay": 150,
+      },
+    ]
+  }
+  deleteRow={false}
+  expandColumnOptions={
+    Object {
+      "expandColumnBeforeSelectColumn": true,
+      "expandColumnComponent": undefined,
+      "expandColumnVisible": false,
+    }
+  }
+  exportCSV={false}
+  fetchInfo={
+    Object {
+      "dataTotalSize": 0,
+    }
+  }
+  headerContainerClass={null}
+  height="100%"
+  hover={false}
+  ignoreSinglePage={false}
+  insertRow={false}
+  keyBoardNav={false}
+  multiColumnSearch={false}
+  multiColumnSort={2}
+  options={
+    Object {
+      "defaultSortName": "employeeId",
+      "defaultSortOrder": "acs",
+    }
+  }
+  pagination={false}
+  printable={false}
+  search={false}
+  selectRow={
+    Object {
+      "bgColor": "",
+      "clickToExpand": false,
+      "clickToSelect": false,
+      "clickToSelectAndEditCell": false,
+      "customComponent": undefined,
+      "hideSelectColumn": false,
+      "mode": "none",
+      "onSelect": undefined,
+      "onSelectAll": undefined,
+      "onlyUnselectVisible": false,
+      "selected": Array [],
+      "showOnlySelected": false,
+      "unselectable": Array [],
+    }
+  }
+  striped={false}
+  tableBodyClass={null}
+  tableContainerClass={null}
+  tableHeaderClass={null}
+  trClassName=""
+>
+  <TableHeaderColumn
+    className=""
+    columnClassName=""
+    columnTitle={false}
+    dataAlign="left"
+    dataField="employeeId"
+    dataSort={true}
+    defaultASC={false}
+    editColumnClassName=""
+    editable={true}
+    expandable={true}
+    filterFormatted={false}
+    headerTitle={true}
+    hidden={false}
+    hiddenOnInsert={false}
+    invalidEditColumnClassName=""
+    isKey={true}
+    keyValidator={false}
+    searchable={true}
+    sortIndicator={true}
+    width={null}
+  >
+    Employee Id
+  </TableHeaderColumn>
+  <TableHeaderColumn
+    className=""
+    columnClassName=""
+    columnTitle={false}
+    dataAlign="left"
+    dataField="payPeriod"
+    dataSort={true}
+    defaultASC={false}
+    editColumnClassName=""
+    editable={true}
+    expandable={true}
+    filterFormatted={false}
+    headerTitle={true}
+    hidden={false}
+    hiddenOnInsert={false}
+    invalidEditColumnClassName=""
+    isKey={false}
+    keyValidator={false}
+    searchable={true}
+    sortIndicator={true}
+    width={null}
+  >
+    Pay Period
+  </TableHeaderColumn>
+  <TableHeaderColumn
+    className=""
+    columnClassName=""
+    columnTitle={false}
+    dataAlign="left"
+    dataField="totalPay"
+    dataSort={true}
+    defaultASC={false}
+    editColumnClassName=""
+    editable={true}
+    expandable={true}
+    filterFormatted={false}
+    headerTitle={true}
+    hidden={false}
+    hiddenOnInsert={false}
+    invalidEditColumnClassName=""
+    isKey={false}
+    keyValidator={false}
+    searchable={true}
+    sortIndicator={true}
+    width={null}
+  >
+    Total Pay
+  </TableHeaderColumn>
+</BootstrapTable>
+`;
