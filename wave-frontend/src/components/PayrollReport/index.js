@@ -4,19 +4,21 @@ import PropTypes from 'prop-types';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import 'react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 
-const getGetPayPeriodSortable = ({payPeriod}) => {
+const getPayPeriodTimeStamp = ({payPeriod}) => {
   const [startDate] = payPeriod.split(' - ');
   return moment(startDate, 'DD-MM-YYYY').unix();
 };
+
 const sortByPayPeriod = (a, b, order) => {
-  const A = getGetPayPeriodSortable(a);
-  const B = getGetPayPeriodSortable(b);
+  const A = getPayPeriodTimeStamp(a);
+  const B = getPayPeriodTimeStamp(b);
   if (order === 'desc') {
     return A - B;
   } else {
     return B - A;
   }
 };
+
 class PayrollReport extends Component {
   render() {
     const {data} = this.props;
@@ -45,4 +47,4 @@ PayrollReport.propTypes = {
   data: PropTypes.array.isRequired
 };
 
-export {PayrollReport as default, getGetPayPeriodSortable, sortByPayPeriod}; // Exported for testability
+export {PayrollReport as default, getPayPeriodTimeStamp, sortByPayPeriod}; // Exported for testability

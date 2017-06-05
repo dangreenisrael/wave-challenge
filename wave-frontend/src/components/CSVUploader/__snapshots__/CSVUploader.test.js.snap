@@ -9,7 +9,7 @@ exports[`CSVUploader Renders Correctly 1`] = `
     }
   }
 >
-  Choose a CSV
+  Upload a Time Report (CSV)
   <input
     accept=".csv"
     onChange={[Function]}
