@@ -1,4 +1,3 @@
-# Wave Demo App
 # Wave Software Development Challenge
 
 Applicants for the [Software
@@ -226,15 +225,9 @@ Evaluation of your submission will be based on the following criteria.
 
 ---------------------------
 
-## Design decisions
-
-### Server vs. Client models
-I opted to keep the data handling logic server side.  In a more complex app I would use redux along with react, but to keep things simple I opted to only maintain models on the server.
-
-
 ## Server Instructions
 
-### Initial setup 
+### Initial build and run 
 
 1. `cd ./wave-backend`
 
@@ -249,10 +242,10 @@ I opted to keep the data handling logic server side.  In a more complex app I wo
 
 `yarn test`
 
-## Client Instructions
+## Client Build Instructions
 
-### Initial setup
-1. `cd ./wave-backend`
+### Initial build and run
+1. `cd ./wave-frontend`
 
 2. `yarn; yarn start;`
 
@@ -261,3 +254,26 @@ I opted to keep the data handling logic server side.  In a more complex app I wo
 
 ### Testing
 `yarn test`
+
+
+
+## Thoughts
+
+### Separation of Concerns.
+I separated the back-end and front-end into two distinct applications. The back-end is built using Express.js and the front-end is built using React.js. They communicate via a JSON REST API. The front-end handles only display logic and user interaction, while the back-end handles data processing and manipulation.
+
+### Model Design
+I kept the models as simple as possible and the database calls are abstracted through an ORM. The models only exist on the back-end, where the reports are formatted and then sent to the client via JSON. If there were a need to manipulate data on the front-end (or maintain application state), I would implement a data layer there with Redux.
+
+### What I am proud of - (almost) everything can be tested
+I believe if something is important enough to be in your application, it is important enough to be tested. Almost all elements in this application can be tested (and most things are). Specifically, in the React client, network calls are mocked to allow for testing different file upload scenarios (ex. duplicate time sheets) and alert calls are mocked and checked to ensure the correct messages are displayed. In the Express server, there is a test database that exists only in memory and is therefore created and destroyed each time the test suite is run. Functionality is broken out into discrete functions, allowing them to be individually unit tested.  With more time, I would have added tests for the whole route handlers and model definitions on the back-end.
+
+### Next steps
+Had this been an application meant for production, I would address the following issues:
+
+- Users would have to login, and only see time reports they are authorized to see
+- Pagination support would be added
+- CSVs would be validated for proper data structure
+- Test coverage would be as complete as possible
+- The database would be on a separate instance, with regular backups
+- The database credentials would be stored in environment variables as opposed to hard-coded
