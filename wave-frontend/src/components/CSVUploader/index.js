@@ -38,7 +38,7 @@ class CSVUpload extends Component {
     const {inputType} = this.state;
     return (
       <label className="btn btn-primary btn-lg" style={style}>
-        Choose a CSV
+        Upload a Time Report (CSV)
         <input type={inputType} style={{display: 'none'}} onChange={this.submit} accept=".csv" />
       </label>
     );
