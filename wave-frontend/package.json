@@ -12,6 +12,7 @@
     "bootstrap": "^3.3.7",
     "enzyme": "^2.8.2",
     "enzyme-to-json": "^1.5.1",
+    "moment": "^2.18.1",
     "prop-types": "^15.5.7",
     "react": "^15.5.4",
     "react-addons-css-transition-group": "^15.0.1",

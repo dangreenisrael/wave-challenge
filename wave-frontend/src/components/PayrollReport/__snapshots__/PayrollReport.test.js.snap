@@ -188,6 +188,7 @@ exports[`PayrollReport Renders Correctly 1`] = `
     isKey={false}
     keyValidator={false}
     searchable={true}
+    sortFunc={[Function]}
     sortIndicator={true}
     width={null}
   >
