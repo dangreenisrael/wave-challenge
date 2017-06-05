@@ -17,7 +17,9 @@ class CSVUpload extends Component {
     fetcher
       .post('timesheets', data)
       .then(() => {
+        this.setState({inputType: ''}); //Reset file input
         reloadData();
+        this.setState({inputType: 'file'}); //Reset file input
       })
       .catch(error => {
         const {status} = error.response;
