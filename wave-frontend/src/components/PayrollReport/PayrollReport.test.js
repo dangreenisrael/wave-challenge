@@ -19,7 +19,7 @@ test('Pay period date is extracted correctly', () => {
 
 test('Pay period is sorting works', () => {
   const sorted = data.sort(sortByPayPeriod);
-  const lastItem = sorted.pop();
+  const lastItem = sorted.shift();
   expect(lastItem).toMatchObject({
     employeeId: 4,
     payPeriod: '16/02/2015 - 28/02/2015',

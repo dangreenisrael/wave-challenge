@@ -13,9 +13,9 @@ const sortByPayPeriod = (a, b, order) => {
   const A = getPayPeriodTimeStamp(a);
   const B = getPayPeriodTimeStamp(b);
   if (order === 'desc') {
-    return A - B;
-  } else {
     return B - A;
+  } else {
+    return A - B;
   }
 };
 
