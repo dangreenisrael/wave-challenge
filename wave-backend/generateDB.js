@@ -13,13 +13,23 @@ let i = 0;
 const message = table => {
   console.log(`${table} created`);
   i = i + 1;
-  if (i >= 2) console.log('\x1b[36m%s\x1b[0m', 'Finished creating tables');
+  if (i >= 4) console.log('\x1b[36m%s\x1b[0m', 'Finished creating tables');
 };
 db.run(
-  'CREATE TABLE `history` (`id`	INTEGER UNIQUE,`body`	TEXT,PRIMARY KEY(id));',
+  'CREATE TABLE `history` (`id`	INTEGER UNIQUE,`body`	TEXT, PRIMARY KEY(id));',
   message('history')
 );
 db.run(
-  'CREATE TABLE `timesheets` (`id`	INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,`date`	TEXT,`hoursWorked`	NUMERIC,`employeeId`	INTEGER,`jobGroup`	TEXT);',
+  'CREATE TABLE `timerecords` (`id`	INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,`date`	TEXT,`hoursWorked`	NUMERIC,`employeeId`	INTEGER,`jobGroupId`	TEXT);',
   message('timesheets')
+);
+
+db.run(
+  'CREATE TABLE `employees` (`employeeId`	INTEGER UNIQUE PRIMARY KEY, `firstName`	TEXT, `lastName`	TEXT);',
+  message('employees')
+);
+
+db.run(
+  'CREATE TABLE `jobGroups` (`jobGroupId`	TEXT UNIQUE PRIMARY KEY,`hourlyRate`	NUMERIC);',
+  message('job types')
 );

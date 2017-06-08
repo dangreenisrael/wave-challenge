@@ -1,11 +1,11 @@
 const createTimeRecords = require('./createTimeRecords');
-const TimeSheet = require('../../models/TimesheetModel');
+const TimeRecord = require('../../models/TimeRecordModel');
 const timeReportData = require('./__testData__/timeReportData');
 const timeRecordsFinal = require('./__testData__/timeRecordsFinal');
 
 afterAll(() => {
-  new TimeSheet();
-  TimeSheet.destroyAll();
+  new TimeRecord();
+  TimeRecord.destroyAll();
 });
 
 describe('Add report to history', () => {
@@ -16,7 +16,7 @@ describe('Add report to history', () => {
           date: new Date(doc.date),
           hoursWorked: Number(doc.hoursWorked),
           employeeId: Number(doc.employeeId),
-          jobGroup: String(doc.jobGroup)
+          jobGroup: String(doc.jobGroupId)
         };
       });
       expect(massaged).toMatchObject(timeRecordsFinal);

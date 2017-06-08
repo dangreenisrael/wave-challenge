@@ -1,4 +1,4 @@
-const Timesheet = require('../models/TimesheetModel');
+const Timesheet = require('../models/TimeRecordModel');
 const getTotalPayForTimePeriodByEmployee = require('../modules/payrollReport/getTotalPayForTimePeriodByEmployee');
 
 module.exports = (req, res) => {

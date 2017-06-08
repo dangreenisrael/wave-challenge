@@ -6,7 +6,7 @@ module.exports = schema.define(
   'history',
   {
     id: {type: schema.Number},
-    body: {type: schema.Text}
+    body: {type: schema.String}
   },
   {}
 );
